@@ -9,7 +9,7 @@
 [ext_resource path="res://Sprites/UI/BG1.png" type="Texture" id=7]
 [ext_resource path="res://Shaders/Transition.shader" type="Shader" id=8]
 [ext_resource path="res://Sprites/UI/Transition_Title.png" type="Texture" id=9]
-[ext_resource path="res://Sprites/Characters (Discourse)/Cosmo/Cosmo_shadow.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/Characters (Discourse)/Cosmo/Cosmo_shadow_nueva.png" type="Texture" id=10]
 [ext_resource path="res://Sprites/Characters (Discourse)/Cosmo/Overlays/Cosmo_shadow_blink1.png" type="Texture" id=11]
 [ext_resource path="res://Sprites/Characters (Discourse)/Cosmo/Overlays/Cosmo_shadow_blink2.png" type="Texture" id=12]
 [ext_resource path="res://Sprites/UI/Title Logo.png" type="Texture" id=13]

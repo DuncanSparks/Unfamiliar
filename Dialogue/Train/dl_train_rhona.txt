@@ -1,5 +1,5 @@
 0
-Commuter: Oh, it's a demon! Hi, demon!
+Commuter: Hey, wait!
 -
 
 1
@@ -7,6 +7,39 @@ UNUSED
 -
 
 2
+Cosmo: ...Yeah?
+Commuter: Are you a demon?
+Cosmo: Um... yeah. I'm a familiar.
+Commuter: Whoa, really?
+Cosmo: Mhm.
+Commuter: Well, you look pretty nice. I like your coat.
+Cosmo: Oh... thank you.
+-
+
+3
+Commuter: Is something wrong? You look kinda down.
+Cosmo: ...
+Cosmo: I should probably go.
+Commuter: Why?
+Cosmo: I have to find my witch.
+Cosmo: We got separated.
+Commuter: Oh... do you need help with that?
+Cosmo: I...
+Cosmo: I don't think so.
+Cosmo: I can probably find her myself.
+Commuter: ...
+-
+
+4
+Commuter: Well, before you leave, we should talk a bit!
+Cosmo: Wait, what?
+Cosmo: I don't-
+Commuter: Come on! It'll be fun!
+Cosmo: Um... Look, I'm not-
+Commuter: Here. I'll show you how to do it!
+-
+
+-1
 Cosmo: ...Hi.
 Commuter: What's wrong? You look kinda down.
 Cosmo: ...

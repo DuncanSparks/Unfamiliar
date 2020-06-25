@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=2]
+[gd_scene load_steps=59 format=2]
 
 [ext_resource path="res://Scripts/Scenes/Scene_Train1.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Props/Intro_bg.png" type="Texture" id=2]
@@ -9,9 +9,9 @@
 [ext_resource path="res://Sprites/Props/Train_light.png" type="Texture" id=7]
 [ext_resource path="res://Sprites/Characters (Overworld)/Cosmo/Cosmo_ow_nouveau_sit.png" type="Texture" id=8]
 [ext_resource path="res://Instances/Event.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Sprites/Characters (Overworld)/Cosmo/Cosmo_ow_nouveau_stand1.png" type="Texture" id=10]
-[ext_resource path="res://Sprites/Characters (Overworld)/Cosmo/Cosmo_ow_nouveau_stand2.png" type="Texture" id=11]
-[ext_resource path="res://Sprites/Characters (Overworld)/Cosmo/Cosmo_ow_nouveau_down.png" type="Texture" id=12]
+[ext_resource path="res://Sprites/Characters (Overworld)/Cosmo/Cosmo_ow_nueva_stand2.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/Characters (Overworld)/Cosmo/Cosmo_ow_nueva_down.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/Characters (Overworld)/Cosmo/Cosmo_ow_nueva_stand1.png" type="Texture" id=12]
 [ext_resource path="res://Instances/Transition.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Fonts/FontStd.tres" type="DynamicFont" id=14]
 [ext_resource path="res://Instances/System/Button.tscn" type="PackedScene" id=15]
@@ -39,6 +39,7 @@
 [ext_resource path="res://Audio/Ambient/Train.ogg" type="AudioStream" id=37]
 [ext_resource path="res://Audio/Music/maintheme_transition.ogg" type="AudioStream" id=38]
 [ext_resource path="res://Instances/System/SceneInfo.tscn" type="PackedScene" id=39]
+[ext_resource path="res://Sprites/Characters (Overworld)/Cosmo/Cosmo_ow_nueva_sit.png" type="Texture" id=40]
 
 [sub_resource type="Animation" id=1]
 resource_name = "New Anim"
@@ -99,15 +100,15 @@ animations = [ {
 "name": "stand",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 33 ), ExtResource( 32 ), ExtResource( 34 ), ExtResource( 32 ) ],
-"loop": true,
-"name": "left_walk",
-"speed": 7.0
-}, {
 "frames": [ ExtResource( 30 ) ],
 "loop": true,
 "name": "down",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 33 ), ExtResource( 32 ), ExtResource( 34 ), ExtResource( 32 ) ],
+"loop": true,
+"name": "left_walk",
+"speed": 7.0
 } ]
 
 [sub_resource type="SpriteFrames" id=4]
@@ -270,9 +271,9 @@ tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/keys = {
 "times": PoolRealArray( 0, 35.3, 35.4, 35.5 ),
-"transitions": PoolRealArray( 2.37841, 8.87655, 1, 9.84917 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 8 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ) ]
+"values": [ ExtResource( 40 ), ExtResource( 12 ), ExtResource( 10 ), ExtResource( 11 ) ]
 }
 tracks/6/type = "value"
 tracks/6/path = NodePath("../PlayerStart:position")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=2]
+[gd_scene load_steps=41 format=2]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://Audio/Footsteps/Step1.ogg" type="AudioStream" id=2]
@@ -6,25 +6,24 @@
 [ext_resource path="res://Audio/Footsteps/Step3.ogg" type="AudioStream" id=4]
 [ext_resource path="res://Audio/Footsteps/Step4.ogg" type="AudioStream" id=5]
 [ext_resource path="res://Audio/Footsteps/Step5.ogg" type="AudioStream" id=6]
-[ext_resource path="res://Sprites/Characters (Overworld)/Cosmo/Cosmo_ow_nouveau_left.png" type="Texture" id=7]
-[ext_resource path="res://Sprites/Characters (Overworld)/Cosmo/Cosmo_ow_nouveau_right.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/Characters (Overworld)/Cosmo/Cosmo_ow_nueva_walkleft1.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Characters (Overworld)/Cosmo/Cosmo_ow_nueva_right.png" type="Texture" id=8]
 [ext_resource path="res://Sprites/Characters (Overworld)/Cosmo/Cosmo_ow_nouveau_up.png" type="Texture" id=9]
 [ext_resource path="res://Sprites/Characters (Overworld)/Cosmo/Cosmo_ow_nouveau_runleft3.png" type="Texture" id=10]
 [ext_resource path="res://Sprites/Characters (Overworld)/Cosmo/Cosmo_ow_nouveau_runleft1.png" type="Texture" id=11]
 [ext_resource path="res://Sprites/Characters (Overworld)/Cosmo/Cosmo_ow_nouveau_runleft2.png" type="Texture" id=12]
 [ext_resource path="res://Sprites/Characters (Overworld)/Cosmo/Cosmo_ow_nouveau_walkup1.png" type="Texture" id=13]
 [ext_resource path="res://Sprites/Characters (Overworld)/Cosmo/Cosmo_ow_nouveau_walkup2.png" type="Texture" id=14]
-[ext_resource path="res://Sprites/Characters (Overworld)/Cosmo/Cosmo_ow_nouveau_walkleft1.png" type="Texture" id=15]
-[ext_resource path="res://Sprites/Characters (Overworld)/Cosmo/Cosmo_ow_nouveau_walkleft2.png" type="Texture" id=16]
-[ext_resource path="res://Sprites/Characters (Overworld)/Cosmo/Cosmo_ow_nouveau_walkdown1.png" type="Texture" id=17]
-[ext_resource path="res://Sprites/Characters (Overworld)/Cosmo/Cosmo_ow_nouveau_down.png" type="Texture" id=18]
-[ext_resource path="res://Sprites/Characters (Overworld)/Cosmo/Cosmo_ow_nouveau_walkdown2.png" type="Texture" id=19]
+[ext_resource path="res://Sprites/Characters (Overworld)/Cosmo/Cosmo_ow_nueva_walkleft2.png" type="Texture" id=15]
+[ext_resource path="res://Sprites/Characters (Overworld)/Cosmo/Cosmo_ow_nueva_walkright1.png" type="Texture" id=16]
+[ext_resource path="res://Sprites/Characters (Overworld)/Cosmo/Cosmo_ow_nueva_down.png" type="Texture" id=17]
+[ext_resource path="res://Sprites/Characters (Overworld)/Cosmo/Cosmo_ow_nueva_left.png" type="Texture" id=18]
+[ext_resource path="res://Sprites/Characters (Overworld)/Cosmo/Cosmo_ow_nueva_walkdown1.png" type="Texture" id=19]
 [ext_resource path="res://Sprites/Characters (Overworld)/Cosmo/Cosmo_ow_nouveau_stand1.png" type="Texture" id=20]
 [ext_resource path="res://Sprites/Characters (Overworld)/Cosmo/Cosmo_ow_nouveau_kneel3.png" type="Texture" id=21]
 [ext_resource path="res://Sprites/Characters (Overworld)/Cosmo/Cosmo_ow_nouveau_kneel4.png" type="Texture" id=22]
 [ext_resource path="res://Sprites/Characters (Overworld)/Cosmo/Cosmo_ow_nouveau_kneel4a.png" type="Texture" id=23]
-[ext_resource path="res://Sprites/Characters (Overworld)/Cosmo/Cosmo_ow_nouveau_walkright1.png" type="Texture" id=24]
-[ext_resource path="res://Sprites/Characters (Overworld)/Cosmo/Cosmo_ow_nouveau_walkright2.png" type="Texture" id=25]
+[ext_resource path="res://Sprites/Characters (Overworld)/Cosmo/Cosmo_ow_nueva_walkright2.png" type="Texture" id=24]
 [ext_resource path="res://Sprites/UI/Interact2.png" type="Texture" id=26]
 [ext_resource path="res://Sprites/Characters (Overworld)/Cosmo/Cosmo_ow_nouveau_right_angry.png" type="Texture" id=27]
 [ext_resource path="res://Sprites/Characters (Overworld)/Cosmo/Cosmo_ow_nouveau_stand1_look.png" type="Texture" id=28]
@@ -35,17 +34,19 @@
 [ext_resource path="res://Sprites/Characters (Overworld)/Cosmo/Cosmo_ow_nouveau_right_sandwich.png" type="Texture" id=33]
 [ext_resource path="res://Sprites/Characters (Overworld)/Cosmo/Cosmo_ow_nouveau_down_2.png" type="Texture" id=34]
 [ext_resource path="res://Sprites/Characters (Overworld)/Cosmo/Cosmo_ow_nouveau_down_selfie.png" type="Texture" id=35]
+[ext_resource path="res://Sprites/Characters (Overworld)/Cosmo/Cosmo_ow_nueva_walkdown2.png" type="Texture" id=36]
+[ext_resource path="res://Sprites/Characters (Overworld)/Cosmo/Cosmo_ow_nueva_stand1.png" type="Texture" id=37]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
+"frames": [ ExtResource( 18 ) ],
+"loop": true,
+"name": "left",
+"speed": 0.0
+}, {
 "frames": [ ExtResource( 8 ) ],
 "loop": true,
 "name": "right",
-"speed": 0.0
-}, {
-"frames": [ ExtResource( 7 ) ],
-"loop": true,
-"name": "left",
 "speed": 0.0
 }, {
 "frames": [ ExtResource( 9 ) ],
@@ -53,14 +54,14 @@ animations = [ {
 "name": "up",
 "speed": 0.0
 }, {
-"frames": [ ExtResource( 35 ) ],
+"frames": [ ExtResource( 19 ), ExtResource( 17 ), ExtResource( 36 ), ExtResource( 17 ) ],
 "loop": true,
-"name": "down_selfie",
-"speed": 5.0
+"name": "down_walk",
+"speed": 7.0
 }, {
-"frames": [ ExtResource( 33 ) ],
+"frames": [ ExtResource( 34 ) ],
 "loop": true,
-"name": "right_sandwich",
+"name": "down_2",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 29 ) ],
@@ -68,59 +69,29 @@ animations = [ {
 "name": "right_sad",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 34 ) ],
-"loop": true,
-"name": "down_2",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 18 ) ],
-"loop": true,
-"name": "down_walk",
-"speed": 7.0
-}, {
-"frames": [ ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ) ],
-"loop": false,
-"name": "kneel",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 30 ) ],
-"loop": true,
-"name": "down_crossarms",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 20 ) ],
-"loop": true,
-"name": "down_sad",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 18 ) ],
+"frames": [ ExtResource( 17 ) ],
 "loop": true,
 "name": "down",
 "speed": 0.0
+}, {
+"frames": [ ExtResource( 33 ) ],
+"loop": true,
+"name": "right_sandwich",
+"speed": 5.0
 }, {
 "frames": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 11 ) ],
 "loop": true,
 "name": "left_run",
 "speed": 7.0
 }, {
-"frames": [ ExtResource( 15 ), ExtResource( 7 ), ExtResource( 16 ), ExtResource( 7 ) ],
+"frames": [ ExtResource( 7 ), ExtResource( 18 ), ExtResource( 15 ), ExtResource( 18 ) ],
 "loop": true,
 "name": "left_walk",
 "speed": 7.0
 }, {
-"frames": [ ExtResource( 32 ) ],
+"frames": [ ExtResource( 37 ) ],
 "loop": true,
-"name": "down_sandwich",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 28 ) ],
-"loop": true,
-"name": "down_sad2",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 31 ) ],
-"loop": true,
-"name": "right_reach",
+"name": "down_sad",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 13 ), ExtResource( 9 ), ExtResource( 14 ), ExtResource( 9 ) ],
@@ -128,9 +99,9 @@ animations = [ {
 "name": "up_walk",
 "speed": 7.0
 }, {
-"frames": [ ExtResource( 27 ) ],
+"frames": [ ExtResource( 30 ) ],
 "loop": true,
-"name": "right_angry",
+"name": "down_crossarms",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 23 ) ],
@@ -138,10 +109,40 @@ animations = [ {
 "name": "kneel2",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 24 ), ExtResource( 8 ), ExtResource( 25 ), ExtResource( 8 ) ],
+"frames": [ ExtResource( 28 ) ],
+"loop": true,
+"name": "down_sad2",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ) ],
+"loop": false,
+"name": "kneel",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 31 ) ],
+"loop": true,
+"name": "right_reach",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 32 ) ],
+"loop": true,
+"name": "down_sandwich",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 27 ) ],
+"loop": true,
+"name": "right_angry",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 16 ), ExtResource( 8 ), ExtResource( 24 ), ExtResource( 8 ) ],
 "loop": true,
 "name": "right_walk",
 "speed": 7.0
+}, {
+"frames": [ ExtResource( 35 ) ],
+"loop": true,
+"name": "down_selfie",
+"speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
