@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scripts/Globals/Controller.gd" type="Script" id=1]
 [ext_resource path="res://Instances/Globals/Overlay.tscn" type="PackedScene" id=2]
@@ -31,78 +31,6 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 0, 0 ), Vector2( 0, 0 ) ]
-}
-
-[sub_resource type="Animation" id=4]
-tracks/0/type = "value"
-tracks/0/path = NodePath("CanvasLayer/Fade:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
-}
-
-[sub_resource type="Animation" id=5]
-tracks/0/type = "value"
-tracks/0/path = NodePath("CanvasLayer/Fade:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
-}
-
-[sub_resource type="Animation" id=6]
-resource_name = "Fadeout"
-tracks/0/type = "value"
-tracks/0/path = NodePath("Music:volume_db")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ 0.0, -60.0 ]
-}
-
-[sub_resource type="Animation" id=7]
-resource_name = "Fadein"
-tracks/0/type = "value"
-tracks/0/path = NodePath("Ambient:volume_db")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ -60.0, 0.0 ]
-}
-
-[sub_resource type="Animation" id=8]
-tracks/0/type = "value"
-tracks/0/path = NodePath("Ambient:volume_db")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ 0.0, -60.0 ]
 }
 
 [node name="Controller" type="Node"]
@@ -139,21 +67,17 @@ mouse_filter = 2
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/CameraScroll = SubResource( 3 )
 
-[node name="AnimationPlayerFade" type="AnimationPlayer" parent="."]
-anims/Fadein = SubResource( 4 )
-anims/Fadeout = SubResource( 5 )
-
-[node name="AnimationPlayerMusic" type="AnimationPlayer" parent="."]
-anims/Fadeout = SubResource( 6 )
-
-[node name="AnimationPlayerAmbient" type="AnimationPlayer" parent="."]
-anims/Fadein = SubResource( 7 )
-anims/Fadeout = SubResource( 8 )
-
 [node name="Music" type="AudioStreamPlayer" parent="."]
+volume_db = -60.0
 bus = "Music"
 
 [node name="Ambient" type="AudioStreamPlayer" parent="."]
 bus = "Ambient"
+
+[node name="TweenFade" type="Tween" parent="."]
+
+[node name="TweenMusic" type="Tween" parent="."]
+
+[node name="TweenAmbient" type="Tween" parent="."]
 
 [editable path="Overlay"]

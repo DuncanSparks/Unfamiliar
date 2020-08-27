@@ -29,8 +29,11 @@ func _ready():
 
 	if not suppress_ambient and Controller.get_current_ambient() != scene_ambient:
 		if scene_ambient != null:
-			Controller.fade_ambient(1.0)
-			timer_ambient.start()
+			if Controller.get_current_ambient() != null:
+				Controller.fade_ambient(1.0)
+				timer_ambient.start()
+			else:
+				Controller.play_ambient(scene_ambient, 1.0, 0.0, true)
 		else:
 			Controller.fade_ambient(1.0)
 			timer_ambient2.start()

@@ -181,7 +181,6 @@ var controller_connected: bool = false
 
 onready var money_text := $Overlay/CanvasLayer/Money as Label
 onready var anim_player := $AnimationPlayer as AnimationPlayer
-onready var anim_player_fade := $AnimationPlayerFade as AnimationPlayer
 onready var map_marker := $Overlay/CanvasLayer/Map/Marker as Sprite
 
 onready var music := $Music as AudioStreamPlayer
@@ -426,18 +425,10 @@ func show_emote(type: int, target: Node2D, offset: Vector2 = Vector2(0, -16)):
 	
 	
 func fade(time: float, fadeout: bool, color: Color = Color(0, 0, 0), above_overlay: bool = false):
-	$CanvasLayer.set_layer(3 if above_overlay else 0)
-	
-	var anim: Animation = anim_player_fade.get_animation("Fadeout" if fadeout else "Fadein")
-	if fadeout:
-		anim.track_set_key_value(0, 0, Color(color.r, color.g, color.b, 0.0))
-		anim.track_set_key_value(0, 1, Color(color.r, color.g, color.b, 1.0))
-	else:
-		anim.track_set_key_value(0, 0, Color(color.r, color.g, color.b, 1.0))
-		anim.track_set_key_value(0, 1, Color(color.r, color.g, color.b, 0.0))
-	
-	anim_player_fade.set_speed_scale(1.0 / time)
-	anim_player_fade.play("Fadeout" if fadeout else "Fadein")
+	($CanvasLayer as CanvasLayer).set_layer(3 if above_overlay else 0)
+	var tween := $TweenFade as Tween
+	tween.interpolate_property($CanvasLayer/Fade, "color", Color(color.r, color.g, color.b, 0.0 if fadeout else 1.0), Color(color.r, color.g, color.b, 1.0 if fadeout else 0.0), time)
+	tween.start()
 	
 	
 func enable_dark_hour(enable: bool):
@@ -660,12 +651,13 @@ func play_music(music_: AudioStream, pitch: float = 1.0, volume: float = 0.0, bu
 	
 	
 func fade_music(time: float, auto_stop: bool = false):
-	var ap := $AnimationPlayerMusic as AnimationPlayer
-	ap.set_speed_scale(1.0 / time)
-	ap.play("Fadeout")
+	var tween := $TweenMusic as Tween
+	var mus := $Music as AudioStreamPlayer
+	tween.interpolate_property(mus, "volume_db", mus.get_volume_db(), -60.0, time)
+	tween.start()
 	current_music = null
 	if auto_stop:
-		yield(ap, "animation_finished")
+		yield(tween, "tween_all_completed")
 		stop_music()
 	
 	
@@ -678,16 +670,16 @@ func play_ambient(amb: AudioStream, pitch: float = 1.0, volume: float = 0.0, fad
 	ambient.set_pitch_scale(pitch)
 	ambient.set_volume_db(volume)
 	if fadein:
-		var ap := $AnimationPlayerAmbient as AnimationPlayer
-		ap.play("Fadein")
+		fade_ambient(1.0, true)
 	ambient.play(0.0)
 	current_ambient = amb
 	
 	
 func fade_ambient(time: float, fadein: bool = false):
-	var ap := $AnimationPlayerAmbient as AnimationPlayer
-	ap.set_speed_scale(1.0 / time)
-	ap.play("Fadeout")
+	var tween := $TweenMusic as Tween
+	var amb := $Ambient as AudioStreamPlayer
+	tween.interpolate_property(amb, "volume_db", -60.0 if fadein else amb.get_volume_db(), 0.0 if fadein else -60.0, time)
+	tween.start()
 	current_ambient = null
 	
 	
@@ -788,7 +780,6 @@ func get_month_str(month: int, short: bool = true) -> String:
 
 func goto_scene_post(pos: Vector2, direction: int):
 	yield(get_tree(), "idle_frame")
-	#var p := Player
 	Player.set_position(pos)
 	Player.set_direction(direction)
 	
