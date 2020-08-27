@@ -39,6 +39,7 @@ void fragment() {
 	COLOR = max(COLOR * tint, float(COLOR.g >= COLOR.b || COLOR.r >= COLOR.b) * COLOR);
 }
 "
+custom_defines = ""
 
 [sub_resource type="ShaderMaterial" id=6]
 shader = SubResource( 5 )
@@ -195,7 +196,7 @@ anims/Static = SubResource( 9 )
 [node name="Static" type="AnimatedSprite" parent="TV"]
 position = Vector2( 6, 9 )
 frames = SubResource( 10 )
-frame = 3
+frame = 1
 playing = true
 centered = false
 

@@ -7,7 +7,7 @@
 [ext_resource path="res://Instances/NPC.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Resources/Sprite Frames (OW)/SpriteFramesOW_Empty.tres" type="SpriteFrames" id=6]
 [ext_resource path="res://Sprites/Props/Los Muertos/LM_Door.png" type="Texture" id=7]
-[ext_resource path="res://Audio/Music/encounter_loop_alt.ogg" type="AudioStream" id=8]
+[ext_resource path="res://Audio/Music/encounter_loop.ogg" type="AudioStream" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8, 20 )
@@ -25,6 +25,8 @@ __meta__ = {
 
 [node name="SceneInfo" parent="." instance=ExtResource( 1 )]
 scene_music = ExtResource( 8 )
+music_pitch = 0.9
+music_bus = "MusicHighPass"
 
 [node name="Overlay" parent="." instance=ExtResource( 2 )]
 is_preview = true

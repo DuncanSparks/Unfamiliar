@@ -54,14 +54,14 @@ extents = Vector2( 30, 4 )
 
 [sub_resource type="SpriteFrames" id=7]
 animations = [ {
-"frames": [ ExtResource( 9 ) ],
-"loop": true,
-"name": "left",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 12 ) ],
 "loop": true,
 "name": "right",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "left",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 5 ) ],
@@ -79,21 +79,6 @@ animations = [ {
 "name": "down_look2",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 10 ) ],
-"loop": true,
-"name": "right_angry",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 29 ) ],
-"loop": true,
-"name": "down_sad",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 6 ) ],
-"loop": true,
-"name": "down",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 12 ) ],
 "loop": true,
 "name": "right_walk",
@@ -103,9 +88,24 @@ animations = [ {
 "loop": true,
 "name": "left_walk",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 29 ) ],
+"loop": true,
+"name": "down_sad",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ) ],
+"loop": true,
+"name": "right_angry",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "down",
+"speed": 5.0
 } ]
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=8]
 resource_name = "Event"
 length = 0.1
 tracks/0/type = "method"
@@ -123,16 +123,16 @@ tracks/0/keys = {
 } ]
 }
 
-[sub_resource type="SpriteFrames" id=8]
+[sub_resource type="SpriteFrames" id=9]
 animations = [ {
-"frames": [ ExtResource( 19 ) ],
-"loop": true,
-"name": "left",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 25 ) ],
 "loop": true,
 "name": "right",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 19 ) ],
+"loop": true,
+"name": "left",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 24 ) ],
@@ -145,14 +145,14 @@ animations = [ {
 "name": "down_look",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 16 ) ],
-"loop": true,
-"name": "down_look3",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 17 ) ],
 "loop": true,
 "name": "down_look2",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 16 ) ],
+"loop": true,
+"name": "down_look3",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 27 ) ],
@@ -165,28 +165,28 @@ animations = [ {
 "name": "down_walk",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 13 ) ],
-"loop": true,
-"name": "down",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 25 ) ],
 "loop": true,
 "name": "right_walk",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 24 ) ],
-"loop": true,
-"name": "up_walk",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 19 ) ],
 "loop": true,
 "name": "left_walk",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 13 ) ],
+"loop": true,
+"name": "down",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 24 ) ],
+"loop": true,
+"name": "up_walk",
+"speed": 5.0
 } ]
 
-[sub_resource type="Animation" id=12]
+[sub_resource type="Animation" id=10]
 resource_name = "Event"
 length = 0.1
 tracks/0/type = "method"
@@ -204,11 +204,10 @@ tracks/0/keys = {
 } ]
 }
 
-[sub_resource type="RectangleShape2D" id=9]
+[sub_resource type="RectangleShape2D" id=11]
 extents = Vector2( 8, 16 )
 
-[sub_resource type="Animation" id=10]
-resource_name = "Event"
+[sub_resource type="Animation" id=12]
 length = 24.5
 tracks/0/type = "method"
 tracks/0/path = NodePath(".")
@@ -692,7 +691,7 @@ frames = SubResource( 7 )
 animation = "down_look"
 
 [node name="AnimationPlayer" parent="EventNPCRavia/Event" index="0"]
-anims/Event = SubResource( 11 )
+anims/Event = SubResource( 8 )
 
 [node name="EventNPCPascal" parent="." instance=ExtResource( 23 )]
 position = Vector2( 194, 76 )
@@ -701,11 +700,11 @@ sprite_override = true
 require_direction = true
 
 [node name="Sprite" parent="EventNPCPascal" index="0"]
-frames = SubResource( 8 )
+frames = SubResource( 9 )
 animation = "down_look"
 
 [node name="AnimationPlayer" parent="EventNPCPascal/Event" index="0"]
-anims/Event = SubResource( 12 )
+anims/Event = SubResource( 10 )
 
 [node name="Door2" parent="." instance=ExtResource( 21 )]
 position = Vector2( 80, 98 )
@@ -715,14 +714,14 @@ target_direction = 2
 door_sound = ExtResource( 22 )
 
 [node name="CollisionShape2D" parent="Door2" index="0"]
-shape = SubResource( 9 )
+shape = SubResource( 11 )
 
 [node name="Event" parent="." instance=ExtResource( 20 )]
 position = Vector2( 104, 90 )
 autostart = true
 
 [node name="AnimationPlayer" parent="Event" index="0"]
-anims/Event = SubResource( 10 )
+anims/Event = SubResource( 12 )
 
 [node name="DestroyOnFlag" parent="Event" instance=ExtResource( 30 )]
 flag = "scn_fletcher"

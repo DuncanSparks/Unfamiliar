@@ -5,7 +5,7 @@
 [ext_resource path="res://Sprites/Props/Los Muertos/LM_Door.png" type="Texture" id=3]
 [ext_resource path="res://Instances/Transition.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Instances/System/SceneInfo.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Audio/Music/encounter_loop_alt.ogg" type="AudioStream" id=6]
+[ext_resource path="res://Audio/Music/encounter_loop.ogg" type="AudioStream" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8, 26 )
@@ -20,6 +20,8 @@ extents = Vector2( 10, 72 )
 
 [node name="SceneInfo" parent="." instance=ExtResource( 5 )]
 scene_music = ExtResource( 6 )
+music_pitch = 0.9
+music_bus = "MusicHighPass"
 
 [node name="Overlay" parent="." instance=ExtResource( 1 )]
 is_preview = true

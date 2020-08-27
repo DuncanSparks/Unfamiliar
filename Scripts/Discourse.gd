@@ -174,7 +174,7 @@ func load_file(path: String):
 		script_list.push_back(line)
 		
 		# If this is a label, add it to the lookup table
-		if line[0] == ":":
+		if not line.empty() and line[0] == ":":
 			label_table[line.substr(2, len(line) - 2)] = len(script_list) - 1
 			
 	if file.is_open():

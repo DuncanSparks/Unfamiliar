@@ -2,8 +2,12 @@ extends Node
 
 export(AudioStream) var scene_music: AudioStream = null
 export(AudioStream) var scene_ambient: AudioStream = null
+export(float) var music_pitch: float = 1.0
+export(float) var music_volume: float = 0.0
+export(String) var music_bus := "Music"
 export(bool) var suppress_music := false
 export(bool) var suppress_ambient := false
+
 
 onready var timer_music := $TimerMusic as Timer
 onready var timer_music2 := $TimerMusic2 as Timer
@@ -33,7 +37,7 @@ func _ready():
 			
 			
 func timer_music_play():
-	Controller.play_music(scene_music)
+	Controller.play_music(scene_music, music_pitch, music_volume, music_bus)
 	
 func timer_music_stop():
 	Controller.stop_music()

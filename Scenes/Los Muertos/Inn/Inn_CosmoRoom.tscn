@@ -16,7 +16,7 @@
 [ext_resource path="res://Sprites/Particles/Leaf1.png" type="Texture" id=14]
 [ext_resource path="res://Audio/Land.ogg" type="AudioStream" id=15]
 [ext_resource path="res://Instances/System/SceneInfo.tscn" type="PackedScene" id=16]
-[ext_resource path="res://Audio/Music/encounter_loop_alt.ogg" type="AudioStream" id=17]
+[ext_resource path="res://Audio/Music/encounter_loop.ogg" type="AudioStream" id=17]
 [ext_resource path="res://Audio/Fadeout.ogg" type="AudioStream" id=18]
 [ext_resource path="res://Audio/Music/maintheme_loop.ogg" type="AudioStream" id=19]
 [ext_resource path="res://Demo_Endcard.png" type="Texture" id=20]
@@ -528,6 +528,8 @@ __meta__ = {
 
 [node name="SceneInfo" parent="." instance=ExtResource( 16 )]
 scene_music = ExtResource( 17 )
+music_pitch = 0.9
+music_bus = "MusicHighPass"
 
 [node name="Overlay" parent="." instance=ExtResource( 1 )]
 is_preview = true

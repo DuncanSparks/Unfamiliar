@@ -21,7 +21,7 @@
 [ext_resource path="res://Sprites/Characters (Overworld)/Los Muertos/Dartguy_up.png" type="Texture" id=19]
 [ext_resource path="res://Instances/System/DestroyOnFlag.tscn" type="PackedScene" id=20]
 [ext_resource path="res://Instances/System/SceneInfo.tscn" type="PackedScene" id=21]
-[ext_resource path="res://Audio/Music/encounter_loop_alt.ogg" type="AudioStream" id=22]
+[ext_resource path="res://Audio/Music/conv_loop.ogg" type="AudioStream" id=22]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 24, 8 )
@@ -40,14 +40,14 @@ extents = Vector2( 5, 5 )
 
 [sub_resource type="SpriteFrames" id=6]
 animations = [ {
-"frames": [ ExtResource( 15 ) ],
-"loop": true,
-"name": "left",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 14 ) ],
 "loop": true,
 "name": "right",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 15 ) ],
+"loop": true,
+"name": "left",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 16 ) ],
@@ -63,14 +63,14 @@ animations = [ {
 
 [sub_resource type="SpriteFrames" id=7]
 animations = [ {
-"frames": [ ExtResource( 15 ) ],
-"loop": true,
-"name": "left",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 18 ) ],
 "loop": true,
 "name": "right",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 15 ) ],
+"loop": true,
+"name": "left",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 19 ) ],
@@ -88,6 +88,8 @@ animations = [ {
 
 [node name="SceneInfo" parent="." instance=ExtResource( 21 )]
 scene_music = ExtResource( 22 )
+music_pitch = 0.8
+music_bus = "MusicHighPass"
 
 [node name="Overlay" parent="." instance=ExtResource( 1 )]
 is_preview = true

@@ -22,7 +22,7 @@
 [ext_resource path="res://Instances/System/DestroyOnFlag.tscn" type="PackedScene" id=20]
 [ext_resource path="res://Scripts/Scenes/Los Muertos/Scene_JokersJive_B.gd" type="Script" id=21]
 [ext_resource path="res://Instances/System/SceneInfo.tscn" type="PackedScene" id=22]
-[ext_resource path="res://Audio/Music/encounter_loop_alt.ogg" type="AudioStream" id=23]
+[ext_resource path="res://Audio/Music/conv_loop.ogg" type="AudioStream" id=23]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 48, 4 )
@@ -50,6 +50,11 @@ extents = Vector2( 7, 15 )
 
 [sub_resource type="SpriteFrames" id=9]
 animations = [ {
+"frames": [ ExtResource( 18 ) ],
+"loop": true,
+"name": "right",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 17 ) ],
 "loop": true,
 "name": "left",
@@ -57,22 +62,17 @@ animations = [ {
 }, {
 "frames": [ ExtResource( 18 ) ],
 "loop": true,
-"name": "right",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 18 ) ],
-"loop": true,
 "name": "up",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 16 ) ],
-"loop": true,
-"name": "down",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 19 ) ],
 "loop": true,
 "name": "down2",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 16 ) ],
+"loop": true,
+"name": "down",
 "speed": 5.0
 } ]
 
@@ -224,6 +224,8 @@ script = ExtResource( 21 )
 
 [node name="SceneInfo" parent="." instance=ExtResource( 22 )]
 scene_music = ExtResource( 23 )
+music_pitch = 0.8
+music_bus = "MusicHighPass"
 
 [node name="Overlay" parent="." instance=ExtResource( 1 )]
 is_preview = true

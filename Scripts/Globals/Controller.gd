@@ -650,10 +650,11 @@ func play_sound_oneshot_from_path(sound: String, pitch: float = 1.0, volume: flo
 	get_tree().get_root().add_child(i)
 	
 	
-func play_music(music_: AudioStream, pitch: float = 1.0, volume: float = 0.0):
+func play_music(music_: AudioStream, pitch: float = 1.0, volume: float = 0.0, bus: String = "Music"):
 	music.set_stream(music_)
 	music.set_pitch_scale(pitch)
 	music.set_volume_db(volume)
+	music.set_bus(bus)
 	music.play(0.0)
 	current_music = music_
 	
@@ -787,9 +788,9 @@ func get_month_str(month: int, short: bool = true) -> String:
 
 func goto_scene_post(pos: Vector2, direction: int):
 	yield(get_tree(), "idle_frame")
-	var p := Player
-	p.set_position(pos)
-	p.set_direction(direction)
+	#var p := Player
+	Player.set_position(pos)
+	Player.set_direction(direction)
 	
 # =====================================================================
 
