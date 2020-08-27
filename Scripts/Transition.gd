@@ -1,5 +1,7 @@
 extends Area2D
 
+signal transition_taken
+
 export(String, FILE, "*.tscn") var target_scene
 export(Player.Direction) var target_direction
 
@@ -29,6 +31,7 @@ var loaded_scene: Node2D = null
 func _on_Transition_body_entered(body: PhysicsBody2D):
 	if body != null:
 		if body.is_in_group("Player") and Player.get_state() == Player.PlayerState.Move:
+			emit_signal("transition_taken")
 			Player.set_direction(target_direction)
 			yield(get_tree(), "physics_frame")
 				

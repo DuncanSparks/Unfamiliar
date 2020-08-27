@@ -13,6 +13,7 @@ void fragment() {
 	COLOR.rgb *= tint.rgb;
 }
 "
+custom_defines = ""
 
 [sub_resource type="ShaderMaterial" id=2]
 shader = SubResource( 1 )

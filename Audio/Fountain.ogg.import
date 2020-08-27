@@ -11,5 +11,5 @@ dest_files=[ "res://.import/Fountain.ogg-231fc78ad8854c23a227a6941a18da6b.oggstr
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0

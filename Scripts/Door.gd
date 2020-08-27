@@ -1,5 +1,7 @@
 extends Area2D
 
+signal door_taken
+
 const DoorTransitionRef := "res://Instances/System/DoorTransition.tscn"
 
 export(String, FILE, "*.tscn") var target_scene
@@ -20,6 +22,7 @@ var in_area := false
 
 func _process(delta):
 	if Input.is_action_just_pressed("sys_action") and in_area and Player.get_state() == Player.PlayerState.Move:
+		emit_signal("door_taken")
 		if door_sound != null:
 			Controller.play_sound_oneshot(door_sound)
 			
