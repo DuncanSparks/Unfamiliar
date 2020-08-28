@@ -106,6 +106,9 @@ texture = ExtResource( 2 )
 centered = false
 region_enabled = true
 region_rect = Rect2( 0, 0, 10000, 180 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
 position = Vector2( 1104, 0 )
@@ -116,14 +119,19 @@ texture = ExtResource( 3 )
 centered = false
 region_enabled = true
 region_rect = Rect2( 0, 0, 5120, 180 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="LogoSF" type="Sprite" parent="RigidBody2D"]
-position = Vector2( 2020, 118 )
+position = Vector2( 1980, 102 )
 texture = ExtResource( 4 )
+centered = false
 
 [node name="LogoG" type="Sprite" parent="RigidBody2D"]
-position = Vector2( 2172, 118 )
+position = Vector2( 2089, 102 )
 texture = ExtResource( 5 )
+centered = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "TrainFlyby"

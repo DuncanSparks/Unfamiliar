@@ -1,7 +1,6 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scripts/System/Flashback.gd" type="Script" id=1]
-[ext_resource path="res://Splash.png" type="Texture" id=2]
 [ext_resource path="res://Sprites/UI/Vignette.png" type="Texture" id=3]
 [ext_resource path="res://Shaders/Transition.shader" type="Shader" id=4]
 [ext_resource path="res://Sprites/UI/Transition_Flashback.png" type="Texture" id=5]
@@ -202,7 +201,6 @@ script = ExtResource( 1 )
 layer = 10
 
 [node name="Art" type="Sprite" parent="CanvasLayer"]
-texture = ExtResource( 2 )
 centered = false
 
 [node name="Vignette" type="Sprite" parent="CanvasLayer"]
@@ -216,6 +214,9 @@ margin_right = 320.0
 margin_bottom = 180.0
 mouse_filter = 2
 color = Color( 1, 1, 1, 0.375 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="TextDisplay" parent="CanvasLayer" instance=ExtResource( 6 )]
 
