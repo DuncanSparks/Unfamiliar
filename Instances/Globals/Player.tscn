@@ -8,12 +8,11 @@
 [ext_resource path="res://Audio/Footsteps/Step5.ogg" type="AudioStream" id=6]
 [ext_resource path="res://Sprites/Characters (Overworld)/Cosmo/Cosmo_ow_nueva_walkleft1.png" type="Texture" id=7]
 [ext_resource path="res://Sprites/Characters (Overworld)/Cosmo/Cosmo_ow_nueva_right.png" type="Texture" id=8]
-[ext_resource path="res://Sprites/Characters (Overworld)/Cosmo/Cosmo_ow_nouveau_up.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/Characters (Overworld)/Cosmo/Cosmo_ow_nueva_walkup_2.png" type="Texture" id=9]
 [ext_resource path="res://Sprites/Characters (Overworld)/Cosmo/Cosmo_ow_nouveau_runleft3.png" type="Texture" id=10]
 [ext_resource path="res://Sprites/Characters (Overworld)/Cosmo/Cosmo_ow_nouveau_runleft1.png" type="Texture" id=11]
 [ext_resource path="res://Sprites/Characters (Overworld)/Cosmo/Cosmo_ow_nouveau_runleft2.png" type="Texture" id=12]
-[ext_resource path="res://Sprites/Characters (Overworld)/Cosmo/Cosmo_ow_nouveau_walkup1.png" type="Texture" id=13]
-[ext_resource path="res://Sprites/Characters (Overworld)/Cosmo/Cosmo_ow_nouveau_walkup2.png" type="Texture" id=14]
+[ext_resource path="res://Sprites/Characters (Overworld)/Cosmo/Cosmo_ow_nueva_walkup1.png" type="Texture" id=13]
 [ext_resource path="res://Sprites/Characters (Overworld)/Cosmo/Cosmo_ow_nueva_walkleft2.png" type="Texture" id=15]
 [ext_resource path="res://Sprites/Characters (Overworld)/Cosmo/Cosmo_ow_nueva_walkright1.png" type="Texture" id=16]
 [ext_resource path="res://Sprites/Characters (Overworld)/Cosmo/Cosmo_ow_nueva_down.png" type="Texture" id=17]
@@ -24,6 +23,7 @@
 [ext_resource path="res://Sprites/Characters (Overworld)/Cosmo/Cosmo_ow_nouveau_kneel4.png" type="Texture" id=22]
 [ext_resource path="res://Sprites/Characters (Overworld)/Cosmo/Cosmo_ow_nouveau_kneel4a.png" type="Texture" id=23]
 [ext_resource path="res://Sprites/Characters (Overworld)/Cosmo/Cosmo_ow_nueva_walkright2.png" type="Texture" id=24]
+[ext_resource path="res://Sprites/Characters (Overworld)/Cosmo/Cosmo_ow_nueva_up.png" type="Texture" id=25]
 [ext_resource path="res://Sprites/UI/Interact2.png" type="Texture" id=26]
 [ext_resource path="res://Sprites/Characters (Overworld)/Cosmo/Cosmo_ow_nouveau_right_angry.png" type="Texture" id=27]
 [ext_resource path="res://Sprites/Characters (Overworld)/Cosmo/Cosmo_ow_nouveau_stand1_look.png" type="Texture" id=28]
@@ -39,17 +39,17 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 18 ) ],
-"loop": true,
-"name": "left",
-"speed": 0.0
-}, {
 "frames": [ ExtResource( 8 ) ],
 "loop": true,
 "name": "right",
 "speed": 0.0
 }, {
-"frames": [ ExtResource( 9 ) ],
+"frames": [ ExtResource( 18 ) ],
+"loop": true,
+"name": "left",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 25 ) ],
 "loop": true,
 "name": "up",
 "speed": 0.0
@@ -64,49 +64,19 @@ animations = [ {
 "name": "down_2",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 29 ) ],
-"loop": true,
-"name": "right_sad",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 17 ) ],
 "loop": true,
 "name": "down",
 "speed": 0.0
-}, {
-"frames": [ ExtResource( 33 ) ],
-"loop": true,
-"name": "right_sandwich",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 11 ) ],
-"loop": true,
-"name": "left_run",
-"speed": 7.0
-}, {
-"frames": [ ExtResource( 7 ), ExtResource( 18 ), ExtResource( 15 ), ExtResource( 18 ) ],
-"loop": true,
-"name": "left_walk",
-"speed": 7.0
 }, {
 "frames": [ ExtResource( 37 ) ],
 "loop": true,
 "name": "down_sad",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 13 ), ExtResource( 9 ), ExtResource( 14 ), ExtResource( 9 ) ],
-"loop": true,
-"name": "up_walk",
-"speed": 7.0
-}, {
 "frames": [ ExtResource( 30 ) ],
 "loop": true,
 "name": "down_crossarms",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 23 ) ],
-"loop": true,
-"name": "kneel2",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 28 ) ],
@@ -119,11 +89,6 @@ animations = [ {
 "name": "kneel",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 31 ) ],
-"loop": true,
-"name": "right_reach",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 32 ) ],
 "loop": true,
 "name": "down_sandwich",
@@ -134,14 +99,49 @@ animations = [ {
 "name": "right_angry",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 13 ), ExtResource( 25 ), ExtResource( 9 ), ExtResource( 25 ) ],
+"loop": true,
+"name": "up_walk",
+"speed": 7.0
+}, {
+"frames": [ ExtResource( 33 ) ],
+"loop": true,
+"name": "right_sandwich",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 31 ) ],
+"loop": true,
+"name": "right_reach",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ), ExtResource( 18 ), ExtResource( 15 ), ExtResource( 18 ) ],
+"loop": true,
+"name": "left_walk",
+"speed": 7.0
+}, {
 "frames": [ ExtResource( 16 ), ExtResource( 8 ), ExtResource( 24 ), ExtResource( 8 ) ],
 "loop": true,
 "name": "right_walk",
 "speed": 7.0
 }, {
+"frames": [ ExtResource( 23 ) ],
+"loop": true,
+"name": "kneel2",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 35 ) ],
 "loop": true,
 "name": "down_selfie",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "left_run",
+"speed": 7.0
+}, {
+"frames": [ ExtResource( 29 ) ],
+"loop": true,
+"name": "right_sad",
 "speed": 5.0
 } ]
 

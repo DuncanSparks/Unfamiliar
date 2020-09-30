@@ -18,7 +18,7 @@ const Variance: int = 5
 const MoveLeniency = 30
 
 const SoundHover := preload("res://Audio/Hover_new.ogg")
-const SoundClick := preload("res://Audio/Click.ogg")
+const SoundClick := preload("res://Audio/Click New.ogg")
 const SoundClickDecisive := preload("res://Audio/Click 2.ogg")
 
 var index: int
@@ -268,7 +268,7 @@ func _on_Button_pressed() -> void:
 	if decisive_click:
 		Controller.play_sound_oneshot(SoundClickDecisive, 1.0, 12)
 	else:
-		Controller.play_sound_oneshot(SoundClick, rand_range(0.95, 1.05), 12)
+		Controller.play_sound_oneshot(SoundClick, rand_range(0.95, 1.05), 4)
 
 	if choice_button:
 		controller.click_choice(index)
